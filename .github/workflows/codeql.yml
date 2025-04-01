@@ -34,7 +34,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        packs: aleemvirani/backdoor-hunting
+        packs: ./backdoor-hunting
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v3
