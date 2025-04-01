@@ -4,7 +4,6 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    # optionally limit branches
     branches: [ main ]
   schedule:
     - cron: '0 0 * * 0' # weekly scan
@@ -22,16 +21,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'python' ]  # Change this to match your project
+        language: [ 'python' ]
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Initialize CodeQL
+    # Optional: If your pack is in a subdirectory like `custom-packs/backdoor-hunting`, move it into `codeql-pack` root
+    # or add a step to copy/symlink it appropriately
+
+    - name: Initialize CodeQL with custom pack
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
+        queries: ./backdoor-hunting/queries
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v3
