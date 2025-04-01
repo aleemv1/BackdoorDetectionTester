@@ -1,0 +1,10 @@
+name: aleemvirani/backdoor-hunting
+version: 0.0.1
+dependencies:
+  codeql/python-all: "*"
+
+packs:
+  aleemvirani/backdoor-hunting:
+    queries:
+      - ./queries
+    tests: true
