@@ -1,10 +1,4 @@
-name: aleemvirani/backdoor-hunting
+name: aleemv1/backdoor-detection
 version: 0.0.1
 dependencies:
   codeql/python-all: "*"
-
-packs:
-  aleemvirani/backdoor-hunting:
-    queries:
-      - ./queries
-    tests: true
