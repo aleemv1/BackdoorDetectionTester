@@ -39,3 +39,6 @@ This project uses CodeQL to analyze Python code for potential backdoors and secu
  ```bash
    python3 main.py
    ```
+
+## Note
+If you are looking to see what is detected by CodeQL on GitHub, go to the Security Tab > Code Scanning. Currently, only the baseline test (`sanity_check.py`) was flagged.
